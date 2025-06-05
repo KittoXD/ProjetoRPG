@@ -39,7 +39,7 @@ while True:
 
         print("Classes disponíveis:")
         for classe_nome, poderes in classes_e_poderes.items():
-            print(f"- {classe_nome}: poderes -> {poderes[0]}, {poderes[1]}")
+            print(f"- {classe_nome}: poderes -> {poderes[0]}, {poderes[1]}, {poderes[2]}")
 
         while True:
             classe_heroi = input("Escolha a classe do Campeão: ").strip()
