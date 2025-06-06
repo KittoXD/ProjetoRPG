@@ -206,7 +206,7 @@ while True:
                 vida2 -= dano_heroi1
 
                 print(f"\n{heroi1['nome']} causou {dano_heroi1} de dano em {heroi2['nome']}.")
-                print(f"{heroi2['nome']} causou {dano_heroi2} de dano em {heroi1['nome']}.")
+                print(f"\n{heroi2['nome']} causou {dano_heroi2} de dano em {heroi1['nome']}.")
 
                 print(f"Vida restante - {heroi1['nome']}: {max(vida1, 0)} | {heroi2['nome']}: {max(vida2, 0)}")
 
