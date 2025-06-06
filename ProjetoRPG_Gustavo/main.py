@@ -123,7 +123,7 @@ while True:
             heroi2['barra_ult'] = 0
 
             turno = 1
-            while vida1 > 0 and vida2 > 0:
+            while vida1 >= 0 and vida2 >= 0:
                 print(f"\nTurno {turno}:")
 
                 heroi1['barra_ult'] = min(100, heroi1['barra_ult'] + 10)
