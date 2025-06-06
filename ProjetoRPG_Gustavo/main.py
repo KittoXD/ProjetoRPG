@@ -77,7 +77,7 @@ while True:
 
         campeoes_lendarios[proximo_codigo_campeao] = campeao
         print(f"\nCampeão '{nome_heroi}' da classe {classe_heroi} registrado com código {proximo_codigo_campeao}.")
-        print(f"Poderes concedidos: {poderes_heroi[0]} e {poderes_heroi[1]}")
+        print(f"Poderes concedidos: {poderes_heroi[0]}, {poderes_heroi[1]} e {poderes_heroi[2]}")
         print(f"Ultimate especial: {ult}")
         print(f"Vida inicial baseada no nível: {vida_inicial}\n")
 
