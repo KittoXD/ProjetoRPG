@@ -387,6 +387,37 @@ def mostrar_estatisticas():
     for codigo, legiao in legiões.items():
         print(f"{legiao['nome']} - Vitórias: {legiao['vitorias']} | Derrotas: {legiao['derrotas']}")
 
+# nova funcionalidade implementada: Treinar campeões
+def treinar_campeao():
+    if not campeoes_lendarios:
+        print("Nenhum Campeão registrado para treinamento.")
+        return
+
+    listar_campeoes()
+    while True:
+        try:
+            codigo_campeao = int(input("Escolha o código do Campeão para treinar: "))
+            if codigo_campeao in campeoes_lendarios:
+                campeao = campeoes_lendarios[codigo_campeao]
+                break
+            else:
+                print("Código inválido. Tente novamente.")
+        except ValueError:
+            print("Digite um número válido.")
+
+    # vendo se o campeão já está no nível máximo
+    if campeao['nivel'] >= 100:
+        print(f"O Campeão {campeao['nome']} já atingiu o nível máximo.")
+        return
+
+    # subindo de nivel e recalcular a vida
+    campeao['nivel'] += 1
+    campeao['vida'] = calcular_vida_inicial(campeao['nivel'])
+
+    print(f"{campeao['nome']} foi treinado com sucesso!")
+    print(f"Novo Nível: {campeao['nivel']} | Nova Vida: {campeao['vida']}")
+
+
 def menu_principal():
     while True:
         print("\nMenu Principal:")
@@ -398,6 +429,7 @@ def menu_principal():
         print("6. Batalha entre Campeões")
         print("7. Batalha entre Legiões")
         print("8. Mostrar Estatísticas (Vitórias/Derrotas)")
+        print("9. Treinar Campeão")
         print("0. Sair")
         
         opcao = input("Escolha uma opção: ").strip()
@@ -430,6 +462,8 @@ def menu_principal():
             batalha_de_legioes()
         elif opcao == '8':
             mostrar_estatisticas()
+        elif opcao == '9':
+            treinar_campeao()
         elif opcao == '0':
             print("Saindo...")
             break
