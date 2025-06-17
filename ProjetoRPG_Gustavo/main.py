@@ -325,8 +325,13 @@ def batalha_de_legioes():
 
     while True:
         try:
-            codigo_legiao1 = int(input("Escolha o código da primeira Legião: "))
-            if codigo_legiao1 in legiões and legiões[codigo_legiao1]['campeoes']:
+            codigo_legiao1 = int(input("Escolha o código da primeira Legião (ou 0 para cancelar): "))
+            if codigo_legiao1 == 0:
+                print("Operação cancelada.")
+                return
+            if (codigo_legiao1 in legiões and
+                'campeoes' in legiões[codigo_legiao1] and
+                legiões[codigo_legiao1]['campeoes']):
                 break
             else:
                 print("Legião inválida ou sem campeões.")
@@ -335,8 +340,14 @@ def batalha_de_legioes():
 
     while True:
         try:
-            codigo_legiao2 = int(input("Escolha o código da segunda Legião: "))
-            if codigo_legiao2 in legiões and legiões[codigo_legiao2]['campeoes'] and codigo_legiao2 != codigo_legiao1:
+            codigo_legiao2 = int(input("Escolha o código da segunda Legião (ou 0 para cancelar): "))
+            if codigo_legiao2 == 0:
+                print("Operação cancelada.")
+                return
+            if (codigo_legiao2 in legiões and
+                'campeoes' in legiões[codigo_legiao2] and
+                legiões[codigo_legiao2]['campeoes'] and
+                codigo_legiao2 != codigo_legiao1):
                 break
             else:
                 print("Legião inválida, sem campeões ou igual à primeira.")
